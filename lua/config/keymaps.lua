@@ -4,6 +4,10 @@ vim.g.mapleader = " "
 
 -- General
 map("n", "<leader>h", ":Alpha<CR>", { desc = "Home screen" })
+map("n", "<C-h>", "<C-w>h", { desc = "Focus left window" })
+map("n", "<C-l>", "<C-w>l", { desc = "Focus right window" })
+map("n", "<C-j>", "<C-w>j", { desc = "Focus lower window" })
+map("n", "<C-k>", "<C-w>k", { desc = "Focus upper window" })
 
 --bufferline
 map("n", "<A-Right>", ":BufferLineCycleNext<CR>", { desc = "Buffer: next tab" })
