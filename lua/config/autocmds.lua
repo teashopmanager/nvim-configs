@@ -19,3 +19,11 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 		vim.opt.relativenumber = true
 	end,
 })
+
+vim.api.nvim_create_user_command("Term", function()
+	vim.cmd("vsplit")
+	vim.cmd("wincmd l") -- move to the new right split
+	vim.cmd("terminal")
+end, {
+	desc = "Open terminal in a vertical split",
+})
