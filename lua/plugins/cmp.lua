@@ -59,15 +59,6 @@ return {
 						fallback()
 					end
 				end, { "i", "s" }),
-				["<Enter>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.confirm({ select = true })
-					elseif luasnip.expand_or_jumpable() then
-						luasnip.expand_or_jump()
-					else
-						fallback()
-					end
-				end, { "i", "s" }),
 				["<C-d>"] = cmp.mapping(function()
 					if cmp.visible_docs() then
 						cmp.close_docs()
