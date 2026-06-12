@@ -18,21 +18,6 @@ return {
 				mappings = {
 					i = {
 						["<Esc>"] = actions.close,
-
-						["<CR>"] = function(prompt_bufnr)
-							local picker = action_state.get_current_picker(prompt_bufnr)
-							local selections = picker:get_multi_selection()
-
-							if #selections > 0 then
-								actions.close(prompt_bufnr)
-
-								for _, file in ipairs(selections) do
-									vim.cmd("edit! " .. file.path)
-								end
-							else
-								actions.select_default(prompt_bufnr)
-							end
-						end,
 					},
 				},
 			},
