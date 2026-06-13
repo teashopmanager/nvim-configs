@@ -10,9 +10,9 @@ return {
 		"mason-org/mason-lspconfig.nvim",
 		opts = {
 			ensure_installed = {
-				"clangd", -- C/C++
-				"lua_ls", -- Lua
-				"pyright", -- Python
+				"clangd",
+				"lua_ls",
+				"pyright",
 			},
 		},
 		dependencies = {

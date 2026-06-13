@@ -8,35 +8,35 @@ return {
 		search = {
 			multi_window = true,
 			wrap = true,
-			mode = "exact", -- "exact", "search" (regex), or "fuzzy"
-			incremental = false, -- behave like incsearch while typing
+			mode = "exact", 
+			incremental = false,
 		},
 		jump = {
 			jumplist = true,
 			autojump = false,
-			history = false, -- add pattern to search history
-			nohlsearch = true, -- clear search highlight after jumping (very handy)
+			history = false, 
+			nohlsearch = true, 
 		},
 		label = {
 			uppercase = false,
-			current = true, -- label the current/closest match, always jumpable with <CR>
-			after = true, -- show label after the match
-			style = "overlay", -- "eol" | "overlay" | "right_align" | "inline"
-			distance = true, -- label matches closer to cursor first
+			current = true, 
+			after = true, 
+			style = "overlay", 
+			distance = true, 
 			rainbow = {
 				enabled = true,
 				shade = 5,
 			},
 		},
 		highlight = {
-			backdrop = true, -- dims everything except matches (makes labels pop)
-			matches = true, -- highlight the search matches themselves
+			backdrop = true,
+			matches = true,
 		},
 		modes = {
 			char = {
 				enabled = true,
 				jump_labels = true,
-				multi_line = true, -- f/t searches across multiple lines
+				multi_line = true,
 			},
 			search = {
 				enabled = true,
