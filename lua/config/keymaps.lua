@@ -76,6 +76,11 @@ map("n", "<Tab>", function()
 	end
 end, { desc = "Switch between Neo-tree and file (if open)" })
 
+--neogen
+map("n", "<leader>dg", function()
+	neogen.generate()
+end, { desc = "Generate documentation" })
+
 -- telescope
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
 map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find Buffers" })
@@ -84,7 +89,7 @@ map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Help Tags" })
 map("n", "<leader>fd", function()
 	require("telescope.builtin").diagnostics()
 end, { desc = "Diagnostics (Telescope)" })
-	
+
 -- Open a floating window showing the full diagnostic message under the cursor.
 map("n", "<leader>e", function()
 	vim.diagnostic.open_float(nil, {
