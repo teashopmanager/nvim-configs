@@ -78,6 +78,13 @@ end, { desc = "Switch between Neo-tree and file (if open)" })
 
 --neogen
 map("n", "<leader>dg", function()
+	local ok, neogen = pcall(require, "neogen")
+
+	if not ok then
+		vim.notify("neogen not loaded", vim.log.levels.ERROR)
+		return
+	end
+
 	neogen.generate()
 end, { desc = "Generate documentation" })
 
@@ -97,20 +104,3 @@ map("n", "<leader>e", function()
 		border = "single", -- square borders
 	})
 end, { desc = "Show diagnostic in floating window" })
-
--- Compile and run current file based on filetype
-map("n", "<leader>+", function()
-	local ft = vim.bo.filetype
-	local dir = vim.fn.expand("%:p:h")
-	local cwd = vim.fn.getcwd()
-
-	vim.cmd("cd " .. dir)
-	if ft == "python" then
-		vim.cmd("!python3 %")
-	elseif ft == "java" then
-		vim.cmd("!javac % && java %:r")
-	elseif ft == "c" then
-		vim.cmd("!gcc % -o %:r && ./%:r")
-	end
-	vim.cmd("cd " .. cwd)
-end)
