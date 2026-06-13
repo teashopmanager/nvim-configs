@@ -29,7 +29,7 @@ return {
 			return true
 		end,
 
-		spec = {z
+		spec = {
 			{ "<leader>f", group = "file/find" },
 			{ "<leader>g", group = "git" },
 			{ "<leader>d", group = "debug/docs" },
